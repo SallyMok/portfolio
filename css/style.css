@@ -1,0 +1,569 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+nav {
+    width: 15em;
+    height: 100vh;
+    position: fixed;
+    border-right: 1px solid white;
+    left: -15em;
+
+    animation: moveleft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes moveleft {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(15em);
+    }
+}
+
+nav img{
+    width: 10em;
+    height: 10em;
+    margin-top: 3em;
+    margin-left: 2em;
+}
+
+ul {
+    margin-top: 5em;
+}
+
+ul li {
+    margin-top: 3em;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    text-align: left;
+    text-indent: 3em;
+}
+
+ul li a:hover {
+    background-color: white;
+    color: black;
+}
+
+
+.onepage {
+    margin-left: 15em;
+}
+
+.quote {
+    height: 100vh;
+    padding-top: 15em;
+    display: flex;
+    
+}
+
+
+.pointer {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    top: 0;
+    overflow: hidden;
+    animation: animateColor 5s linear infinite;
+
+}
+
+@keyframes animateColor {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.pointer span {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 40px;
+    z-index: 999;
+}
+
+.pointer span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 50%;
+    background-color: greenyellow;
+    box-shadow: 0 0 10px greenyellow,
+        0 0 20px greenyellow,
+        0 0 40px greenyellow,
+        0 0 60px greenyellow,
+        0 0 80px greenyellow,
+        0 0 100px greenyellow;
+    border-radius: 50%;
+    transition: 2s;
+    transform: scale(0);
+}
+
+.pointer span:hover::before {
+    transition: 0s;
+    transform: scale(1);
+}
+
+.h1style {
+    position: relative;
+    background-color: coral;
+    top: 11em;
+    left: 14em;
+
+}
+
+h1 {
+    position: absolute;
+    font-size: 5.5em;
+    line-height: 1em;
+    transform: translate(-50%, -50%);
+    font-family: 'Bungee';
+}
+
+h1:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+}
+
+h1:nth-child(2) {
+    color: white;
+    animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+        clip-path: polygon(0 53%, 13% 48%, 26% 49%, 39% 54%, 54% 61%, 70% 65%, 85% 62%, 100% 51%, 99% 99%, 0% 99%);
+    }
+
+    50% {
+        clip-path: polygon(0 59%, 13% 71%, 33% 75%, 51% 71%, 61% 58%, 72% 48%, 90% 42%, 100% 47%, 99% 99%, 0% 99%);
+    }
+
+    100% {
+        clip-path: polygon(0 53%, 13% 48%, 26% 49%, 39% 54%, 54% 61%, 70% 65%, 85% 62%, 100% 51%, 99% 99%, 0% 99%);
+    }
+}
+
+p.intro {
+    color: white;
+    font-size: 5.5em;
+    position: relative;
+    left: 1.68em;
+    top: 2.5em;
+    line-height: 1em;
+    width: 15em;
+    font-family: 'Bungee';
+}
+
+.quote img{
+    width: 20em;
+    height: 30em;
+    margin-left: -13em;
+}
+
+h2 {
+    color: white;
+    font-size: 4.5em;
+    padding-left: 2.15em;
+    padding-top: 1.5em;
+    font-family: 'Bungee';
+    width: 30em;
+}
+
+
+#werk {
+    height: 100vh; 
+}
+
+#werk div{
+    width: 75em;
+    height: 40em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 9.5em;
+    top: 10em;
+    flex-wrap: wrap;
+  
+}
+
+#werk img{
+    width: 25em;
+    margin-top: -5em;
+}
+
+#werk img:hover{
+    animation: rotatescale .65s linear 1;
+
+}
+
+@keyframes rotatescale{
+    0%{
+        -webkit-transform: scale(1) rotateZ(0);
+        transform: scale(1) rotateZ(0);
+    }
+    50%{
+        -webkit-transform: scale(2) rotateZ(180deg);
+        transform: scale(2) rotateZ(180deg);
+        }
+    100%{
+        -webkit-transform: scale(1) rotateZ(360deg);
+        transform: scale(1) rotateZ(360deg);
+    }    
+}
+
+
+
+
+#skills {
+    height: 100vh;
+    color: white;
+}
+
+.showskills {
+    position: relative;
+    width: 500px;
+    left: 9.5em;
+    top: 10em;
+
+}
+
+.adobe {
+    position: relative;
+    width: 500px;
+    left: 45em;
+    bottom: 11.5em;
+}
+
+.skills {
+    position: relative;
+    display: flex;
+    margin: 20px 0;
+    padding: 24px 10px 18px;
+    background: linear-gradient(#616161 0%, #333 10%, #222);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #000;
+    transition: 0.5s;
+}
+
+.skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 255, 255, .1);
+    z-index: 10;
+}
+
+.naam {
+    position: relative;
+    width: 110px;
+    text-align: right;
+    color: #fff;
+    margin-top: -2px;
+    text-transform: uppercase;
+
+}
+
+.value {
+    position: relative;
+    width: 40px;
+    text-align: left;
+    color: #fff;
+    margin-top: -2px;
+    text-transform: uppercase;
+
+}
+
+.percent {
+    position: relative;
+    width: calc(100% - 150px);
+    height: 20px;
+    margin: 0 10px;
+    border-radius: 10px;
+    background-color: #151515;
+    box-shadow: inset 0 0 10px #000;
+    overflow: hidden;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: inset 0 0 2px #000;
+    animation: progresbar 4s ease-in-out forwards;
+}
+
+@keyframes progresbar {
+    from {
+        width: 0;
+    }
+}
+
+.skills:nth-child(1) .progress {
+    background: linear-gradient(45deg, #1fe6ff, #674ab7);
+}
+
+.skills:nth-child(2) .progress {
+    background: linear-gradient(45deg, #3bc0ff, #33ff00);
+}
+
+.skills:nth-child(3) .progress {
+    background: linear-gradient(45deg, #ffee54, #ff00ca);
+}
+
+.skills:nth-child(4) .progress {
+    background: linear-gradient(45deg, #eeaeca, #94bbe9);
+}
+
+
+.hover {
+    height: 0;
+    width: 0;
+}
+
+
+.hover:hover .skills {
+    opacity: 0.25;
+}
+
+.hover .skills:hover {
+    opacity: 1;
+}
+
+
+#about {
+    height: 100vh;
+}
+
+#about p {
+    color: white;
+    width: 30.5em;
+    height: 5em;
+    margin: 0 0 2em 8em;
+    font-size: 20px;
+}
+
+#about p:first-of-type {
+    font-size: 24px;
+    margin-top: 7em;
+    margin-left: 6.75em;
+    margin-bottom: 0em;
+    font-weight: bold;
+}
+
+#about a {
+    color: white;
+    text-decoration: none;
+    height: 2em;
+    width: 8em;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    padding-top: .4em;
+    border: 1px solid red;
+    margin-left: 18em;
+    border-radius: 2px;
+    box-shadow: inset 0 0 0 0 red;
+    transition: ease-out 0.3s;
+    position: relative;
+    bottom: 2em;
+}
+
+#about a:hover {
+    box-shadow: inset 8em 0 0 0 red;
+}
+
+
+.scrolldown .scrollcontainer {
+    height: 2.5em;
+    width: 15em;
+    position: sticky;
+    top: 58em;
+    transform: rotate(90deg);
+    color: white;
+    font-size: 16px;
+    font-style: italic;
+    display: flex;
+    animation: scrolljump 2.5s infinite ease-in-out;
+    z-index: 100;
+}
+
+.scroll.links {
+    top: 3.5em;
+    position: absolute;
+}
+
+.scroll.rechts {
+    position: absolute;
+    bottom: 86em;
+}
+
+@keyframes scrolljump {
+    0% {
+        transform: translateY(0)rotate(90deg);
+    }
+
+    50% {
+        transform: translateY(100%)rotate(90deg);
+    }
+
+    100% {
+        transform: translateY(0)rotate(90deg);
+    }
+}
+
+
+
+
+
+
+.onepagewerk {
+    margin-left: 15em;
+}
+
+.onepagewerk img {
+    position: relative;
+    left: 9.5em;
+    top: 4em;
+}
+
+.onepagewerk p{
+    color: white;
+    width: 15em;
+    height: 4em;
+    position: relative;
+    left: 43em;
+    bottom: 13em;
+    font-size: 25px;
+}
+
+/* CONTAINER VOOR EXTRA INFORMATIES */
+.onepagewerk details {
+    width: 75%;
+    /* background-color: #1fe6ff; */
+}
+
+
+/* STYLING VAN DESCRIPTION EN SHIPPING */
+.onepagewerk details summary {
+    width: 100%;
+    padding: 16px 0;
+    color: var(--secondcolor);
+    border-top: 1px solid var(--secondcolor);
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 300;
+    list-style: none;
+    position: relative;
+    color: white;
+}
+
+
+/* STYLING VAN + */
+.onepagewerk details summary::after {
+    content: "+";
+    color: var(--secondcolor);
+    position: absolute;
+    font-size: 20px;
+    line-height: 0;
+    margin-top: 12px;
+    right: 5%;
+    font-weight: 300;
+    transform-origin: center;
+    transition: .2s linear;
+}
+
+
+/* DRAAIEN VAN + */
+.onepagewerk details[open] summary:after {
+    transform: rotate(45deg)
+}
+
+
+/* DESCRIPTION EN SHIPPING TEKST STYLING */
+.onepagewerk section:nth-of-type(3) details p {
+    text-align: left;
+    color: var(--secondcolor);
+    font-size: 16px;
+}
+
+.onepagewerk a{
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    height: 2em;
+    width: 10em;
+    display: block;
+    text-align: center;
+    padding-top: .5em;
+    position: relative;
+    left: 73em;
+    bottom: 16em;
+}
+
+
+#contact {
+    height: 100vh;
+    /* background-color: darkkhaki; */
+}
+
+#contact p{
+    color: white;
+}
+
+#contact a{
+    color: white;
+    /* background-color: #3bc0ff; */
+    display: block;
+    text-decoration: none;
+    font-size: 2em;
+    position: relative;
+    left: 5em;
+    top: 3em;
+    width: 10em;
+    
+}
+
+#contact a:last-of-type{
+    top: 6em;
+}
